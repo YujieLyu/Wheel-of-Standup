@@ -18,8 +18,8 @@ body {
 
 .mainbox {
     position: relative;
-    width: 50rem;
-    height: 50rem;
+    width: 40rem;
+    height: 40rem;
 }
 
 .mainbox::after {
@@ -30,7 +30,7 @@ body {
     background: url("picker.png") no-repeat;
     background-size: 32px;
     right: -40px;
-    top: 350px;
+    top: 300px;
     transform: rotate(90deg);
 }
 .box {
