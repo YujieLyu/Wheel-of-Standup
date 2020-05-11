@@ -121,6 +121,6 @@ span b {
     font-size: 20px;
 }
 
-.mainbox.animate::after {
+/* .mainbox.animate::after {
     animation: animateArrow 0.7s ease infinite;
-}
+} */
