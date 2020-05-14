@@ -44,7 +44,7 @@ const createList = (nameList) => {
         nameCX.setAttribute('type', 'checkbox');
         nameCX.setAttribute('id', name);
         nameCX.setAttribute('value', name);
-        nameCX.setAttribute('checked', "");
+        nameCX.setAttribute('checked', true);
         nameCX.setAttribute('onClick', `reCreatePie(this)`);
         // console.log(name);
         labelForName = document.createElement('label');
@@ -65,13 +65,21 @@ const createList = (nameList) => {
 }
 
 
+
 const reCreatePie = (ele) => {
     let value = ele.value;
     if (!ele.checked) {
-        const newNames = names.filter(e => e != value);
-        names = newNames;
-        createPie(names.length);
-        console.log('this is new: ' + newNames)
+        if(names.length>3){
+            const newNames = names.filter(e => e != value);
+            names = newNames;
+            createPie(names.length);
+            console.log('this is new: ' + newNames)
+        } else{
+            
+            alert('No less than 3 options');
+            ele.checked=true;
+            console.log(ele);
+        }
     } else {
         names[names.length] = value;
         createPie(names.length);
