@@ -107,3 +107,18 @@ li {
     left: 100px;
     top:30%;
 }
+
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+
+
+
+  }
+
+  h3{
+      font-family: monospace;
+  }

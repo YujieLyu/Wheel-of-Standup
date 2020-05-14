@@ -9,7 +9,7 @@ let names, colors;
 
 const createPie = (slices) => {
     let item, name, itemName, rotateAngle, sliceAngle, skewValue;
-
+    shuffle(names)
     sliceAngle = 360 / slices;
     skewValue = sliceAngle + 90;
     for (let i = 0; i < slices; i++) {
@@ -37,7 +37,7 @@ const createPie = (slices) => {
 
 const createList = (nameList) => {
     let nameCX, labelForName, nameDisplay, cxItem, br;
-    
+
     for (let i = 0; i < nameList.length; i++) {
         name = nameList[i];
         nameCX = document.createElement('input');
@@ -66,21 +66,21 @@ const createList = (nameList) => {
 
 
 const reCreatePie = (ele) => {
-    let value=ele.value;
-    if(!ele.checked){
+    let value = ele.value;
+    if (!ele.checked) {
         const newNames = names.filter(e => e != value);
-        names=newNames;
+        names = newNames;
         createPie(names.length);
         console.log('this is new: ' + newNames)
-    }else{
-        names[names.length]=value;
+    } else {
+        names[names.length] = value;
         createPie(names.length);
     }
 
 
 }
 
- colors = [
+colors = [
     '#fd6363',
     '#fa9d5f',
     '#fac248',
@@ -95,7 +95,7 @@ const reCreatePie = (ele) => {
     '#f860be'
 ];
 
- names = [
+names = [
     'Adi',
     'Alex',
     'Brady',
@@ -109,5 +109,10 @@ const reCreatePie = (ele) => {
     'Rod',
 ]
 
-createPie(11);
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+}
+
 createList(names);
+createPie(names.length);
+
