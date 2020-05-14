@@ -32,7 +32,7 @@ h1{
     content: "";
     width: 50px;
     height: 70px;
-    background: url("picker.png") no-repeat;
+    background: url("./../picker.png") no-repeat;
     background-size: 32px;
     right: -40px;
     top: 300px;
@@ -70,52 +70,53 @@ li {
     transform: skewY(60deg) rotate(15deg);
     padding-top: 30px;
 }
+
 li:first-child {
-    transform: rotate(0deg) skewY(-60deg);
+    transform: rotate(0deg) skewY(120deg);
     background: rgb(250, 157, 95);
 }
 li:nth-child(2) {
-    transform: rotate(30deg) skewY(-60deg);
+    transform: rotate(30deg) skewY(120deg);
     background: rgb(250, 194, 72);
 }
 li:nth-child(3) {
-    transform: rotate(60deg) skewY(-60deg);
+    transform: rotate(60deg) skewY(120deg);
     background: rgb(248, 222, 107);
 }
-li:nth-child(4) {
-    transform: rotate(90deg) skewY(-60deg);
+ li:nth-child(4) {
+    transform: rotate(90deg) skewY(120deg);
     background: rgb(203, 247, 121);
 }
 li:nth-child(5) {
-    transform: rotate(120deg) skewY(-60deg);
+    transform: rotate(120deg) skewY(120deg);
     background: rgb(115, 253, 173);
 }
 li:nth-child(6) {
-    transform: rotate(150deg) skewY(-60deg);
+    transform: rotate(150deg) skewY(120deg);
     background: rgb(96, 200, 248);
 }
 li:nth-child(7) {
-    transform: rotate(180deg) skewY(-60deg);
+    transform: rotate(180deg) skewY(120deg);
     background: rgb(96, 167, 248);
 }
 li:nth-child(8) {
-    transform: rotate(210deg) skewY(-60deg);
+    transform: rotate(210deg) skewY(120deg);
     background: rgb(111, 113, 248);
 }
 li:nth-child(9) {
-    transform: rotate(240deg) skewY(-60deg);
+    transform: rotate(240deg) skewY(120deg);
     background: rgb(162, 125, 250);
 }
 li:nth-child(10) {
-    transform: rotate(270deg) skewY(-60deg);
+    transform: rotate(270deg) skewY(120deg);
     background: rgb(243, 145, 252);
 }
 li:nth-child(11) {
-    transform: rotate(300deg) skewY(-60deg);
+    transform: rotate(300deg) skewY(120deg);
     background: rgb(248, 96, 190);
 }
 li:nth-child(12) {
-    transform: rotate(330deg) skewY(-60deg);
+    transform: rotate(330deg) skewY(120deg);
     background: rgb(253, 99, 99);
 }
 

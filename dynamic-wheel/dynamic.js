@@ -1,79 +1,65 @@
 const mySpinner = () => {
-  let x = 1024;
-  let y = 9999;
-  let deg = Math.floor(Math.random() * (x - y)) + y;
-  // let deg=Math.floor(10000 + Math.random() * 9000);
-  document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
+    let x = 1024;
+    let y = 9999;
+    let deg = Math.floor(Math.random() * (x - y)) + y;
+    document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
 }
 
-let startAngle, midAngle, endAngle,
-  startCX, startCY,
-  endCX, endCY, container,
-  path, text, d;
 
-function createPie(cx, cy, r, slices) {
-  for (let i = 0; i < slices; i++) {
-    startAngle = i * 360 / slices;
-    console.log(startAngle);
-    endAngle = (i + 1) * 360 / slices;
-    midAngle = (startAngle + endAngle) / 2;
-    console.log(midAngle);
-    //console.log(fromAngle + ' ' + toAngle);
-    startCX = cx + (r * Math.cos(startAngle * Math.PI / 180));
-    startCY = cy + (r * Math.sin(startAngle * Math.PI / 180));
-    endCX = cx + (r * Math.cos(endAngle * Math.PI / 180));
-    endCY = cy + (r * Math.sin(endAngle * Math.PI / 180));
-    //console.log(fromCoord + ' ' + toCoord);
-    d = 'M' + cx + ',' + cy + ' L' + startCX + ',' + startCY + ' A' + r + ',' + r + ' 0 0,1 ' + endCX + ',' + endCY + 'z';
-    //console.log(d);
-    container = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttributeNS(null, "d", d);
-    var color = colors[i];
-    var name = names[i];
-    console.log(name);
-    text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-    text.setAttribute('transform', `rotate(${midAngle}deg)translate(${r / 2}px)`);
-    text.setAttribute("text-anchor", "end");
-    text.setAttribute("x", cx);
-    text.setAttribute("y", cy);
-    var nameText = document.createTextNode(name);
-    text.appendChild(nameText);
-    path.style.cssText = 'fill:' + color;
-    container.append(path);
-    container.append(text);
-    document.getElementById('pie').appendChild(container);
-  }
+
+const createPie = (slices) => {
+    let item, itemName, rotateAngle, sliceAngle, skewValue;
+    sliceAngle=360 / slices;
+    skewValue = sliceAngle + 90;
+    for (let i = 0; i < slices; i++) {
+
+        let nameTXT = document.createTextNode(names[i]);
+        console.log(name);
+
+        itemName = document.createElement('div');
+        itemName.setAttribute('class', 'text');
+        itemName.style.cssText="position: absolute;color: #fff;font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY("+ (180-skewValue)+"deg) rotate("+sliceAngle/2+"deg);padding-top: 200px;;"
+        itemName.append(nameTXT);
+
+        item = document.createElement('li');
+        rotateAngle =sliceAngle * i;
+        
+        item.style.cssText = "transform:rotate(" + rotateAngle + "deg) skewY(" + skewValue + "deg);background:"+colors[i];
+        item.appendChild(itemName);
+        document.getElementById('pie').appendChild(item);
+    }
 }
+
+
+
 let colors = [
-  '#fd6363',
-  '#fa9d5f',
-  '#fac248',
-  '#f8de6b',
-  '#cbf779',
-  '#73fdad',
-  '#60a7f8',
-  '#60c8f8',
-  '#6f71f8',
-  '#a27dfa',
-  '#f391fc',
-  '#f860be'
+    '#fd6363',
+    '#fa9d5f',
+    '#fac248',
+    '#f8de6b',
+    '#cbf779',
+    '#73fdad',
+    '#60a7f8',
+    '#60c8f8',
+    '#6f71f8',
+    '#a27dfa',
+    '#f391fc',
+    '#f860be'
 ];
 
 let names = [
-  'Adi',
-  'Alex',
-  'Brady',
-  'DD',
-  'Jason',
-  'Jessie',
-  'Marty',
-  'Matt',
-  'Pras',
-  'Rena',
-  'Rod'
+    'Adi',
+    'Alex',
+    'Brady',
+    'DD',
+    'Jason',
+    'Jessie',
+    'Marty',
+    'Matt',
+    'Pras',
+    'Rena',
+    'Rod',
+    'xyz'
 ]
 
-createPie(55, 55, 50, 6);
-
-
+createPie(12);
