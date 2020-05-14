@@ -99,3 +99,11 @@ li {
     height: 70px;
     font-size: 20px;
 }
+
+.namebox{
+    position: absolute;
+    width: 20rem;
+    height: 40rem;
+    left: 100px;
+    top:30%;
+}
