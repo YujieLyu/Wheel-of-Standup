@@ -114,11 +114,13 @@ input[type=checkbox] {
     height: 20px;
     margin-right: 8px;
     cursor: pointer;
-
-
-
   }
 
-  h3{
+  h2{
       font-family: monospace;
+  }
+
+  p{
+      font-family: monospace;
+      font-size: small;
   }
