@@ -31,7 +31,6 @@ const createPie = (slices) => {
         document.getElementById('pie').appendChild(item);
 
 
-
     }
 }
 
@@ -67,17 +66,18 @@ const createList = (nameList) => {
 
 
 const reCreatePie = (ele) => {
+    document.getElementById('pie').innerHTML = '';
     let value = ele.value;
     if (!ele.checked) {
-        if(names.length>3){
+        if (names.length > 3) {
             const newNames = names.filter(e => e != value);
             names = newNames;
             createPie(names.length);
             console.log('this is new: ' + newNames)
-        } else{
-            
+        } else {
+
             alert('No less than 3 options');
-            ele.checked=true;
+            ele.checked = true;
             console.log(ele);
         }
     } else {
