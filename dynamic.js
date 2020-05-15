@@ -66,12 +66,13 @@ const createList = (nameList) => {
 
 
 const reCreatePie = (ele) => {
-    document.getElementById('pie').innerHTML = '';
+    
     let value = ele.value;
     if (!ele.checked) {
         if (names.length > 3) {
             const newNames = names.filter(e => e != value);
             names = newNames;
+            document.getElementById('pie').innerHTML = '';
             createPie(names.length);
             console.log('this is new: ' + newNames)
         } else {
