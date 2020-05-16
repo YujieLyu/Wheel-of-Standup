@@ -76,13 +76,13 @@ const reCreatePie = (ele) => {
             createPie(names.length);
             console.log('this is new: ' + newNames)
         } else {
-
             alert('No less than 3 options');
             ele.checked = true;
             console.log(ele);
         }
     } else {
         names[names.length] = value;
+        document.getElementById('pie').innerHTML = '';
         createPie(names.length);
     }
 
