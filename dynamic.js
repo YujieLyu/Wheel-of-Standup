@@ -29,6 +29,7 @@ const createPie = (slices) => {
 
         item.style.cssText = "transform:rotate(" + rotateAngle + "deg) skewY(" + skewValue + "deg);background:" + colors[i];
         item.appendChild(itemName);
+        item.setAttribute('class','slice')
         document.getElementById('pie').appendChild(item);
     }
 }
@@ -43,6 +44,7 @@ const createList = (nameList) => {
         nameCX.setAttribute('id', name);
         nameCX.setAttribute('value', name);
         nameCX.setAttribute('checked', true);
+        nameCX.setAttribute('class','nameCX');
         nameCX.setAttribute('onClick', `reCreatePie(this)`);
         // console.log(name);
         labelForName = document.createElement('label');

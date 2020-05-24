@@ -20,12 +20,28 @@ h1 {
     top: 2rem;
     font-family: monospace;
 }
+
+.namebox {
+    position: absolute;
+    width: 20rem;
+    height: 40rem;
+    left: 100px;
+    top: 10%;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
 .mainbox {
     position: relative;
     margin: 0 auto;
     width: 40rem;
     height: 40rem;
-    margin-top: 10rem;
 }
 
 .mainbox::after {
@@ -83,20 +99,6 @@ li {
 .spin:focus {
     outline: 0 !important;
 }
-.namebox {
-    position: absolute;
-    width: 20rem;
-    height: 40rem;
-    left: 100px;
-    top: 30%;
-}
-
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    cursor: pointer;
-}
 
 h2 {
     font-family: monospace;
@@ -107,6 +109,7 @@ p {
     font-size: small;
 }
 .btn-primary-spacing {
-    margin-top: 29rem;
-    margin-left: auto;
+    position: absolute;
+    top: 50%;
+    left: 25%;
 }
