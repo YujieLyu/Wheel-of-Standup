@@ -1,9 +1,11 @@
 const mySpinner = () => {
     let x = 1024;
-    let y = 9999;
-    let deg = Math.floor(Math.random() * (x - y)) + y;
+    let y = 10204;
+    // let deg = Math.floor(Math.random() * (x - y)) + y;
+    let deg = Math.floor(100000 + Math.random() * 90000);
     document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
 }
+
 
 let names, colors;
 
@@ -17,7 +19,6 @@ const createPie = (slices) => {
 
         let nameTXT = document.createTextNode(name);
 
-
         itemName = document.createElement('div');
         itemName.setAttribute('class', 'text');
         itemName.style.cssText = "position: absolute;color: #fff;font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY(" + (180 - skewValue) + "deg) rotate(" + sliceAngle / 2 + "deg);padding-top: 200px;;"
@@ -29,8 +30,6 @@ const createPie = (slices) => {
         item.style.cssText = "transform:rotate(" + rotateAngle + "deg) skewY(" + skewValue + "deg);background:" + colors[i];
         item.appendChild(itemName);
         document.getElementById('pie').appendChild(item);
-
-
     }
 }
 
@@ -60,13 +59,11 @@ const createList = (nameList) => {
         cxItem.appendChild(labelForName);
         cxItem.append(br);
     }
-
 }
 
 
-
 const reCreatePie = (ele) => {
-    
+
     let value = ele.value;
     if (!ele.checked) {
         if (names.length > 3) {
@@ -85,8 +82,6 @@ const reCreatePie = (ele) => {
         document.getElementById('pie').innerHTML = '';
         createPie(names.length);
     }
-
-
 }
 
 colors = [

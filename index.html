@@ -6,24 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who will run the next stand-up?</title>
   <link rel="stylesheet" href="dynamic-styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
 
 <body>
-  <div class="mainbox">
-    <ul class="pie" id="pie">
-    </ul>
-    <button class="spin" onclick="mySpinner()">GO</button>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-3">
+        <div class="namebox" id="namebox">
+          <h2>Customize the wheel</h3><br>
+            <p>
+              No less than 3 options
+            </p><br>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mainbox">
+          <ul class="pie" id="pie">
+          </ul>
+          <button class="spin" onclick="mySpinner()">GO</button>
+        </div>
+      </div>
+      <div class="col-3">
+        <button class="btn btn-outline-info btn-primary-spacing" onclick="reCreatePie(this)">
+          Shuffle the wheel
+        </button>
+      </div>
+    </div>
   </div>
 
 
-  <div class="namebox" id="namebox">
-    <h2>Customize the wheel (Beta)</h3><br>
-      <p>
-        No less than 3 options
-      </p><br>
-  </div>
-  
+
   <script src="dynamic.js"></script>
 </body>
 

@@ -15,16 +15,17 @@ body {
     background: #fff;
     background-size: cover;
 }
-h1{
-    position:absolute;
-    top:2rem;
-   font-family: monospace;
-   
+h1 {
+    position: absolute;
+    top: 2rem;
+    font-family: monospace;
 }
 .mainbox {
     position: relative;
+    margin: 0 auto;
     width: 40rem;
     height: 40rem;
+    margin-top: 10rem;
 }
 
 .mainbox::after {
@@ -56,27 +57,7 @@ li {
     width: 70%;
     height: 70%;
     transform-origin: 0% 100%;
-    /* overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 50%;
-    transform-origin: 0% 100%; */
 }
-/* .text {
-    position: absolute;
-    color: #fff;
-    font-size: large;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    left: -120%;
-    width: 200%;
-    height: 200%;
-    text-align: center;
-    transform: skewY(60deg) rotate(15deg);
-    padding-top: 30px;
-} */
 .spin {
     position: absolute;
     top: 50%;
@@ -99,28 +80,33 @@ li {
     height: 70px;
     font-size: 20px;
 }
-
-.namebox{
+.spin:focus {
+    outline: 0 !important;
+}
+.namebox {
     position: absolute;
     width: 20rem;
     height: 40rem;
     left: 100px;
-    top:30%;
+    top: 30%;
 }
 
-
-input[type=checkbox] {
+input[type="checkbox"] {
     width: 20px;
     height: 20px;
     margin-right: 8px;
     cursor: pointer;
-  }
+}
 
-  h2{
-      font-family: monospace;
-  }
+h2 {
+    font-family: monospace;
+}
 
-  p{
-      font-family: monospace;
-      font-size: small;
-  }
+p {
+    font-family: monospace;
+    font-size: small;
+}
+.btn-primary-spacing {
+    margin-top: 29rem;
+    margin-left: auto;
+}
