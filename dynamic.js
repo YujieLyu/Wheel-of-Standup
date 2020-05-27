@@ -1,57 +1,61 @@
-const mySpinner = () => {
-    let x = 1024;
-    let y = 10204;
-    // let deg = Math.floor(Math.random() * (x - y)) + y;
-    let deg = Math.floor(100000 + Math.random() * 90000);
-    document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
-}
+let names, candidate, colors;
 
-
-let names, colors;
-
-const createPie = (slices) => {
-    let item, name, itemName, rotateAngle, sliceAngle, skewValue;
-    shuffle(names)
+const createPie = (candidate) => {
+    slices = candidate.length;
+    // console.log(slices);
+    let slice, name, sliceName, rotateAngle, sliceAngle, skewValue;
+    shuffle(candidate);
     sliceAngle = 360 / slices;
     skewValue = sliceAngle + 90;
     for (let i = 0; i < slices; i++) {
-        name = names[i];
+        name = candidate[i];
 
         let nameTXT = document.createTextNode(name);
 
-        itemName = document.createElement('div');
-        itemName.setAttribute('class', 'text');
-        itemName.style.cssText = "position: absolute;color: #fff;font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY(" + (180 - skewValue) + "deg) rotate(" + sliceAngle / 2 + "deg);padding-top: 200px;;"
-        itemName.append(nameTXT);
+        sliceName = document.createElement('div');
+        sliceName.setAttribute('class', 'pie_sliceName');
+        sliceName.style.cssText = "position: absolute;color: #fff;font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY(" + (180 - skewValue) + "deg) rotate(" + sliceAngle / 2 + "deg);padding-top: 200px;"
+        sliceName.append(nameTXT);
 
-        item = document.createElement('li');
+        slice = document.createElement('li');
         rotateAngle = sliceAngle * i;
 
-        item.style.cssText = "transform:rotate(" + rotateAngle + "deg) skewY(" + skewValue + "deg);background:" + colors[i];
-        item.appendChild(itemName);
-        item.setAttribute('class','slice')
-        document.getElementById('pie').appendChild(item);
+        slice.style.cssText = "transform:rotate(" + rotateAngle + "deg) skewY(" + skewValue + "deg);background:" + colors[i];
+        slice.appendChild(sliceName);
+        slice.setAttribute('class', 'pie_slice')
+        document.getElementById('pie').appendChild(slice);
     }
 }
 
 const createList = (nameList) => {
-    let nameCX, labelForName, nameDisplay, cxItem, br;
+    let nameCX, labelForName, nameDisplay, today, cxItem, br;
+    today = getWeekDay();
 
     for (let i = 0; i < nameList.length; i++) {
         name = nameList[i];
+        // console.log(name)
         nameCX = document.createElement('input');
         nameCX.setAttribute('type', 'checkbox');
         nameCX.setAttribute('id', name);
         nameCX.setAttribute('value', name);
-        nameCX.setAttribute('checked', true);
-        nameCX.setAttribute('class','nameCX');
+        labelForName = document.createElement('label');
+
+        if (name === "Jessie" && (today === 3 || today === 4)) {
+            nameDisplay = document.createTextNode(name + ' (Will not work on Thu & Fri)');
+            names = names.filter(e => e !== "Jessie");
+
+        } else {
+            nameCX.setAttribute('checked', true);
+            labelForName.setAttribute('for', name);
+            nameDisplay = document.createTextNode(name);
+        }
+        labelForName.setAttribute('for', name);
+        nameCX.setAttribute('class', 'nameCX');
         nameCX.setAttribute('onClick', `reCreatePie(this)`);
         // console.log(name);
-        labelForName = document.createElement('label');
-        labelForName.setAttribute('for', name);
 
-        nameDisplay = document.createTextNode(name);
         labelForName.appendChild(nameDisplay);
+
 
         br = document.createElement('br');
 
@@ -67,23 +71,43 @@ const createList = (nameList) => {
 const reCreatePie = (ele) => {
 
     let value = ele.value;
+    console.log(value);
     if (!ele.checked) {
         if (names.length > 3) {
-            const newNames = names.filter(e => e != value);
-            names = newNames;
+            names = names.filter(e => e !== value);
+         
             document.getElementById('pie').innerHTML = '';
-            createPie(names.length);
-            console.log('this is new: ' + newNames)
+            createPie(names);
         } else {
             alert('No less than 3 options');
             ele.checked = true;
             console.log(ele);
         }
     } else {
-        names[names.length] = value;
+ 
+            names[names.length] = value;
+
+        console.log(names);
         document.getElementById('pie').innerHTML = '';
-        createPie(names.length);
+        createPie(names);
     }
+}
+
+const mySpinner = () => {
+    let x = 1024;
+    let y = 10204;
+    // let deg = Math.floor(Math.random() * (x - y)) + y;
+    let deg = Math.floor(100000 + Math.random() * 90000);
+    document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
+}
+
+const shuffle = (array) => {
+    array.sort(() => Math.random() - 0.5);
+}
+
+const getWeekDay = () => {
+    let d = new Date();
+    return d.getDay();
 }
 
 colors = [
@@ -115,10 +139,6 @@ names = [
     'Rod',
 ]
 
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-}
-
 createList(names);
-createPie(names.length);
+createPie(names);
 
