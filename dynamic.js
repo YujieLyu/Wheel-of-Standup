@@ -75,7 +75,6 @@ const reCreatePie = (ele) => {
     if (!ele.checked) {
         if (names.length > 3) {
             names = names.filter(e => e !== value);
-         
             document.getElementById('pie').innerHTML = '';
             createPie(names);
         } else {
@@ -84,10 +83,7 @@ const reCreatePie = (ele) => {
             console.log(ele);
         }
     } else {
- 
-            names[names.length] = value;
-
-        console.log(names);
+        names[names.length] = value;
         document.getElementById('pie').innerHTML = '';
         createPie(names);
     }
@@ -96,8 +92,8 @@ const reCreatePie = (ele) => {
 const mySpinner = () => {
     let x = 1024;
     let y = 10204;
-    // let deg = Math.floor(Math.random() * (x - y)) + y;
-    let deg = Math.floor(100000 + Math.random() * 90000);
+    let deg = Math.floor(Math.random() * (x - y)) + y;
+    // let deg = Math.floor(100000 + Math.random() * 90000);
     document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
 }
 
