@@ -1,115 +1,126 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 body {
-    font-family: Open Sans;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    background: #fff;
-    background-size: cover;
+  font-family: Open Sans;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  background-size: cover;
 }
+
 h1 {
-    position: absolute;
-    top: 2rem;
-    font-family: monospace;
+  position: absolute;
+  top: 2rem;
+  font-family: monospace;
 }
 
-.namebox {
-    position: absolute;
-    width: 20rem;
-    height: 40rem;
-    left: 100px;
-    top: 10%;
+.leftBox {
+  position: absolute;
+  width: 20rem;
+  height: 40rem;
+  left: 100px;
+  top: 10%;
 }
 
-input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-    cursor: pointer;
+.leftBox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
-
-.mainbox {
-    position: relative;
-    margin: 0 auto;
-    width: 40rem;
-    height: 40rem;
+.leftBox h2 {
+  font-family: monospace;
 }
 
-.mainbox::after {
-    position: absolute;
-    content: "";
-    width: 50px;
-    height: 70px;
-    background: url("picker.png") no-repeat;
-    background-size: 32px;
-    right: -40px;
-    top: 300px;
-    transform: rotate(90deg);
-}
-.mainbox_pie {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 50%;
-    border: 10px solid #fff;
-    overflow: hidden;
-    transition: all ease 5s;
+.leftBox p {
+  font-family: monospace;
+  font-size: small;
 }
 
-li {
-    overflow: hidden;
-    position: absolute;
-    top: -20%;
-    right: -20%;
-    width: 70%;
-    height: 70%;
-    transform-origin: 0% 100%;
-}
-.mainbox_spin {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 75px;
-    width: 75px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    background-color: #ff5722;
-    color: #fff;
-    box-shadow: 0 5px 20px #000;
-    font-weight: bold;
-    font-size: 22px;
-    cursor: pointer;
+.middleBox {
+  position: relative;
+  margin: 0 auto;
+  width: 40rem;
+  height: 40rem;
 }
 
-.mainbox_spin:active {
-    width: 70px;
-    height: 70px;
-    font-size: 20px;
-}
-.mainbox_spin:focus {
-    outline: 0 !important;
+.middleBox::after {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 70px;
+  background: url("picker.png") no-repeat;
+  background-size: 32px;
+  right: -40px;
+  top: 300px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
-h2 {
-    font-family: monospace;
+.middleBox .middleBox_pie {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  overflow: hidden;
+  -webkit-transition: all ease 5s;
+  transition: all ease 5s;
 }
 
-p {
-    font-family: monospace;
-    font-size: small;
+.middleBox .middleBox_pie li {
+  overflow: hidden;
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 70%;
+  height: 70%;
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
 }
-.btn-primary-spacing {
-    position: absolute;
-    top: 50%;
-    left: 25%;
+
+.middleBox .middleBox_spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #ff5722;
+  color: #fff;
+  -webkit-box-shadow: 0 5px 20px #000;
+          box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
 }
+
+.middleBox .middleBox_spin:active {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.middleBox .middleBox_spin:focus {
+  outline: 0 !important;
+}
+/*# sourceMappingURL=dynamic-styles.css.map */

@@ -59,7 +59,7 @@ const createList = (nameList) => {
 
         br = document.createElement('br');
 
-        cxItem = document.getElementById('namebox');
+        cxItem = document.getElementById('leftBox');
 
         cxItem.appendChild(nameCX);
         cxItem.appendChild(labelForName);
@@ -93,13 +93,13 @@ const mySpinner = () => {
     let x = 1024;
     let y = 10204;
     let deg = Math.floor(Math.random() * (x - y)) + y;
-    // let deg = Math.floor(100000 + Math.random() * 90000);
+    // let deg = Math.floor(100000 + Math.random()  * 90000);
     document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
 }
 
 const shuffle = (array) => {
     array.sort(() => Math.random() - 0.5);
-}
+} 
 
 const getWeekDay = () => {
     let d = new Date();
