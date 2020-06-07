@@ -14,7 +14,7 @@ const createPie = (candidate) => {
 
         sliceName = document.createElement('div');
         sliceName.setAttribute('class', 'pie_sliceName');
-        sliceName.style.cssText = "position: absolute;color: #fff;font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY(" + (180 - skewValue) + "deg) rotate(" + sliceAngle / 2 + "deg);padding-top: 200px;"
+        sliceName.style.cssText = "position: absolute;color: #fff;font-size: 20px; font-family: monospace;font-weight: bold; left: -100%;width: 200%;height: 200%;text-align: center;transform: skewY(" + (180 - skewValue) + "deg) rotate(" + sliceAngle / 2 + "deg);padding-top: 200px;"
         sliceName.append(nameTXT);
 
         slice = document.createElement('li');
@@ -91,7 +91,7 @@ const reCreatePie = (ele) => {
 
 const mySpinner = () => {
     let x = 1024;
-    let y = 10204;
+    let y = 60204;
     let deg = Math.floor(Math.random() * (x - y)) + y;
     // let deg = Math.floor(100000 + Math.random()  * 90000);
     document.getElementById('pie').style.transform = "rotate(" + deg + "deg)";
