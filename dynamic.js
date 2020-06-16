@@ -1,14 +1,14 @@
-let names, candidate, colors;
+let names, colors;
 
-const createPie = (candidate) => {
-    slices = candidate.length;
+const createPie = (candidates) => {
+    slices = candidates.length;
     // console.log(slices);
     let slice, name, sliceName, rotateAngle, sliceAngle, skewValue;
-    shuffle(candidate);
+    shuffle(candidates);
     sliceAngle = 360 / slices;
     skewValue = sliceAngle + 90;
     for (let i = 0; i < slices; i++) {
-        name = candidate[i];
+        name = candidates[i];
 
         let nameTXT = document.createTextNode(name);
 
@@ -40,11 +40,15 @@ const createList = (nameList) => {
         nameCX.setAttribute('value', name);
         labelForName = document.createElement('label');
 
-        if (name === "Jessie" && (today === 3 || today === 4)) {
-            nameDisplay = document.createTextNode(name + ' (Will not work on Thu & Fri)');
-            names = names.filter(e => e !== "Jessie");
+        // if (name === "Jessie" && (today === 3 || today === 4)) {
+        //     nameDisplay = document.createTextNode(name + ' (will not work on Thu & Fri)');
+        //     // names = names.filter(e => e !== "Jessie");
 
-        } else {
+        // } else 
+        if(name==="Marty"||name==="Jessie"||name==="Matt"){
+            nameDisplay = document.createTextNode(name + ' (alreay ran this round)');
+            // names = names.filter(e => e !== "Jessie");
+        } else{
             nameCX.setAttribute('checked', true);
             labelForName.setAttribute('for', name);
             nameDisplay = document.createTextNode(name);
@@ -73,19 +77,19 @@ const reCreatePie = (ele) => {
     let value = ele.value;
     console.log(value);
     if (!ele.checked) {
-        if (names.length > 3) {
-            names = names.filter(e => e !== value);
+        if (candidates.length > 3) {
+            candidates = candidates.filter(e => e !== value);
             document.getElementById('pie').innerHTML = '';
-            createPie(names);
+            createPie(candidates);
         } else {
             alert('No less than 3 options');
             ele.checked = true;
             console.log(ele);
         }
     } else {
-        names[names.length] = value;
+        candidates[candidates.length] = value;
         document.getElementById('pie').innerHTML = '';
-        createPie(names);
+        createPie(candidates);
     }
 }
 
@@ -135,6 +139,20 @@ names = [
     'Rod',
 ]
 
+candidates=[
+    'Adi',
+    'Alex',
+    'Brady',
+    'DD',
+    'Jason',
+    // 'Jessie',
+    // 'Marty',
+    // 'Matt',
+    'Pras',
+    'Rena',
+    'Rod',
+]
+
 createList(names);
-createPie(names);
+createPie(candidates);
 
