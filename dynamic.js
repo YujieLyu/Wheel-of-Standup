@@ -45,7 +45,7 @@ const createList = (nameList) => {
         //     // names = names.filter(e => e !== "Jessie");
 
         // } else 
-        if(name==="Marty"||name==="Jessie"||name==="Matt"){
+        if(name==="Marty"||name==="Jessie"||name==="Matt"||name==="Rena"){
             nameDisplay = document.createTextNode(name + ' (alreay ran this round)');
             // names = names.filter(e => e !== "Jessie");
         } else{
@@ -149,7 +149,7 @@ candidates=[
     // 'Marty',
     // 'Matt',
     'Pras',
-    'Rena',
+    // 'Rena',
     'Rod',
 ]
 
