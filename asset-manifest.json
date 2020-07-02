@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/wheel-of-standup/static/css/main.7b261c33.chunk.css",
-    "main.js": "/wheel-of-standup/static/js/main.74635b84.chunk.js",
-    "main.js.map": "/wheel-of-standup/static/js/main.74635b84.chunk.js.map",
+    "main.js": "/wheel-of-standup/static/js/main.f53c3b60.chunk.js",
+    "main.js.map": "/wheel-of-standup/static/js/main.f53c3b60.chunk.js.map",
     "runtime-main.js": "/wheel-of-standup/static/js/runtime-main.9e161ec5.js",
     "runtime-main.js.map": "/wheel-of-standup/static/js/runtime-main.9e161ec5.js.map",
     "static/js/2.4afb4495.chunk.js": "/wheel-of-standup/static/js/2.4afb4495.chunk.js",
     "static/js/2.4afb4495.chunk.js.map": "/wheel-of-standup/static/js/2.4afb4495.chunk.js.map",
     "index.html": "/wheel-of-standup/index.html",
-    "precache-manifest.71f977840b350692d5654776904a1989.js": "/wheel-of-standup/precache-manifest.71f977840b350692d5654776904a1989.js",
+    "precache-manifest.4e6e44723e8b102eefa5b802f253f748.js": "/wheel-of-standup/precache-manifest.4e6e44723e8b102eefa5b802f253f748.js",
     "service-worker.js": "/wheel-of-standup/service-worker.js",
     "static/css/main.7b261c33.chunk.css.map": "/wheel-of-standup/static/css/main.7b261c33.chunk.css.map",
     "static/js/2.4afb4495.chunk.js.LICENSE.txt": "/wheel-of-standup/static/js/2.4afb4495.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.9e161ec5.js",
     "static/js/2.4afb4495.chunk.js",
     "static/css/main.7b261c33.chunk.css",
-    "static/js/main.74635b84.chunk.js"
+    "static/js/main.f53c3b60.chunk.js"
   ]
 }
