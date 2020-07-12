@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "249dba60ec8753cbd4a5797fbc8ec181",
+    "revision": "14affba13c8e3096efca08f36a06870e",
     "url": "/wheel-of-standup/index.html"
   },
   {
-    "revision": "027706a90465a0e9151d",
-    "url": "/wheel-of-standup/static/css/main.ca0d8255.chunk.css"
+    "revision": "5930f31a773e13979a97",
+    "url": "/wheel-of-standup/static/css/main.55608c23.chunk.css"
   },
   {
-    "revision": "2883777431d0b9760dbc",
-    "url": "/wheel-of-standup/static/js/2.27783ad2.chunk.js"
+    "revision": "910cf0056b546f9bcaba",
+    "url": "/wheel-of-standup/static/js/2.a516f766.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/wheel-of-standup/static/js/2.27783ad2.chunk.js.LICENSE.txt"
+    "url": "/wheel-of-standup/static/js/2.a516f766.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "027706a90465a0e9151d",
-    "url": "/wheel-of-standup/static/js/main.dbd1bc6a.chunk.js"
+    "revision": "5930f31a773e13979a97",
+    "url": "/wheel-of-standup/static/js/main.bb813f1d.chunk.js"
   },
   {
     "revision": "ff38c2de1fcbb32e2f2c",
